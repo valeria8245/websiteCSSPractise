@@ -2,7 +2,7 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin: 0;
   padding: 0;
-  background-color: rgb(225, 233, 236);
+  background-color: rgb(231, 231, 231);
 }
 
 .section {
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-link {
-  text-decoration: underline;
+  text-decoration: none;
   color: rgb(255, 72, 0);
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -158,4 +158,32 @@ body {
   background-color: rgb(205, 47, 47);
   border-color: rgb(219, 84, 0);
   color: rgb(253, 253, 253);
+}
+.grid-container {
+  margin-top: 150px;
+}
+.gallery {
+  display: grid;
+  height: 400px;
+  align-content: center;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+.grid-item { 
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  border: 2px solid rgb(187, 186, 186);
+  border-radius: 15px;
+  background-color: rgb(98, 102, 101);
+}
+.grid-image {
+  width: 200px;
+  height: 300px;
+  padding: 5px;
+}
+.gallery-title {
+  color: aliceblue;
 }
