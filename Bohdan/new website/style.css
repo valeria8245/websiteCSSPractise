@@ -138,7 +138,7 @@ section::before {
     padding: 10px;
 }
 
-/* when screen is smaller make it auto auto */
+/* when screen is smaller adapt it*/
 @media screen and (max-width: 1800px) {
     .gallery {
         grid-template-columns: auto auto auto;
