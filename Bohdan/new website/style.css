@@ -138,6 +138,25 @@ section::before {
     padding: 10px;
 }
 
+/* when screen is smaller make it auto auto */
+@media screen and (max-width: 1800px) {
+    .gallery {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .gallery {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: auto;
+    }
+}
+
 .gallery-item {
     display: flex;
     flex-direction: column;
@@ -147,7 +166,13 @@ section::before {
     border-radius: 7px;
     background-color: #333333;
     color: white;
-    padding: 15px;
+    padding: 30px;
+}
+
+.gallery-item:hover {
+    outline: 3px solid #6d1818;
+    transition: 0.2s;
+    transform: scale(1.02);
 }
 
 .gallery-item>p {
@@ -176,10 +201,10 @@ section::before {
     background-color: #6d1818;
     color: white;
     cursor: pointer;
-    margin-right: 10px;
 }
 
 .gallery-item>button:hover {
     background-color: #380d0d;
-    transition: 0.5s;
+    outline: 1px solid white;
+    transition: 0.3s;
 }
