@@ -164,7 +164,7 @@ section::before {
     align-items: center;
     text-align: center;
     border-radius: 7px;
-    background-color: #333333;
+    background-image: linear-gradient(45deg, #1A4A7D, #7D4C1A);
     color: white;
     padding: 30px;
 }
