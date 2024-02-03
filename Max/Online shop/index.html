@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+</head>
+<style>
+    body{
+      background-image: url(fon2.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 1%;
+    }
+.custom-btn0{
+  width: 130px;
+  height: 40px;
+  color: #7111e6;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none
+
+}
+
+.btn-2 {
+  background: rgb(247,150,192);
+background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  margin-left: 10px;
+}
+.btn-2 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%
+}
+.btn-2:before,
+.btn-2:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-2:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-2:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-2:hover{
+  background: transparent;
+  color: #44a588;
+  box-shadow: none;
+}
+.btn-2:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-2:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-2 span:before,
+.btn-2 span:after {
+  position: absolute;
+  content: "";
+  box-shadow:
+   -1px -1px 20px 0px rgb(122, 26, 195),
+   -4px -4px 5px 0px rgb(29, 163, 230),
+   7px 7px 20px 0px rgba(0, 0, 0, 0.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+}
+.btn-2 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-2 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: .5px;
+  transition: all 500ms ease;
+}
+.btn-2 span:hover:before {
+  width: 100%;
+}
+.btn-2 span:hover:after {
+  width: 100%;
+}
+.navbar-content{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: -50px;
+  
+   
+    
+
+}
+.navbar{
+    display: flex;
+   align-items: center;
+   background-image: url(fon.jpg);
+   border-radius: 20px;
+   border-bottom: #7111e6;
+   
+    
+}
+.menu{
+    width: 100%;
+    
+}
+.logo-redactor{
+    margin-left: 50px;
+    
+}
+
+.custom-btn{
+    width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  margin-left: 130px;
+  
+}
+.btn-1 {
+background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-1 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-1:before,
+.btn-1:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+.btn-1:before{
+   height: 0%;
+   width: 2px;
+}
+.btn-1:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-1:hover{
+  color: rgba(251,75,2,1);
+  background: transparent;
+}
+.btn-1:hover:before {
+  height: 100%;
+}
+.btn-1:hover:after {
+  width: 100%;
+}
+.btn-1 span:before,
+.btn-1 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+.btn-1 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-1 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-1 span:hover:before {
+  height: 100%;
+}
+.btn-1 span:hover:after {
+  width: 100%;
+}
+.gallery{
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: auto auto auto auto ;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+
+}
+.gallery-container{
+    margin-top: 150px;
+}
+.gallery-item{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 350px;
+    text-align: center;
+    border: 2px solid rgb(0, 207, 255);
+    border-radius: 20px;
+    background-color: rgb(17, 224, 224);
+    color: red;
+    
+}
+
+
+</style>
+
+<body>
+
+
+    <div class="navbar">
+    
+    <img  src="logo.png" class="logo-redactor" alt="logo" width="100px" height="100px">
+
+    <div class="menu">
+
+    <ul class="navbar-content">
+     <li><button class="custom-btn0 btn-2"><a  href="https://www.nike.com/w/new-shorts-38fphz3n82y"> <span> Shorts</span></a></button></li>
+     <li><button class="custom-btn0 btn-2"><a  href="https://www.nike.com/w/mens-basketball-shoes-3glsmznik1zy7ok"><span>Basketball sneakers</span></a></button></li>
+     <li><button class="custom-btn0 btn-2"><a  href="https://www.nike.com/w/new-socks-3n82yzuwr3"><span> Socks</span></a></button></li>
+     <li><button class="custom-btn0 btn-2"><a  href="https://www.nike.com/w/new-accessories-equipment-3n82yzawwpw"><span>Accessories</span> </a></button></li>
+     <li><button class="custom-btn btn-1"><a href="file:///C:/Users/User/Desktop/%D0%A7%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%BA%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D1%96%D0%B2/index.html"><span>sign up</span></a></button></li>
+    
+    </div>
+   </ul>
+
+   </div>
+
+ <section>
+    <div class="gallery-container"> 
+         <div class="gallery">
+         <div class="gallery-item">
+           <img src="sknr.png" alt="snkr"height="230px" width="270px" >
+           <h3 class="gallery-text-redactor"> NIKE AIR ZOOM TERRA KIGER 8 DH0649-600</h3>
+        </div>
+
+        <div class="gallery-item">
+            <img src="snkr2.webp" alt="snkr2" height="170" width="350px">
+            <h3 class="gallery-text-redactor">Баскетбольные кроссовки Air Jordan 11 Low Emerald </h3>
+             </div>
+
+        <div class="gallery-item">
+            <img src="sknr3.png" alt="sknr3" height="230px" width="270px">
+            <h3 class="gallery-text-redactor">Шорти Nike Flex Men's Graphic Training Shorts</h3>
+         </div>
+
+         <div class="gallery-item">
+            <img src="" alt="" height="230px" width="270px">
+            <h3 class="gallery-text-redactor">Носки Nike</h3>
+
+        </div>
+      
+    </div>
+</section>
+
+
+     
+ 
+    
+
+  
+
+</body>
+</html>
