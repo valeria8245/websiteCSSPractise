@@ -211,6 +211,23 @@ section::before {
     transition: 0.3s;
 }
 
+.catalog{
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(images/bg.webp);
+}
+.catalog>img{
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+}
+
+
+
+
 /* when screen is smaller adapt it*/
 @media screen and (max-width: 1800px) {
     .gallery {
@@ -227,6 +244,9 @@ section::before {
 @media screen and (max-width: 1000px) {
     .gallery {
         grid-template-columns: auto;
+    }
+    .gallery-item{
+        background-image: linear-gradient(45deg, #1B8B97, #971B8B, #8B971B);
     }
 }
 
