@@ -1,17 +1,14 @@
-.main-image-content {
+.main-image-content{
     display: block;
-
     -webkit-mask-image: url(images/tractor.png);
     mask-image: url(images/tractor.png);
-
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-
     -webkit-mask-size: contain;
     mask-size: contain;
-
 }
 
-.main-image-content>img {
-    margin-top: -230px;
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
 }

@@ -226,8 +226,6 @@ section::before {
 }
 
 
-
-
 /* when screen is smaller adapt it*/
 @media screen and (max-width: 1800px) {
     .gallery {
