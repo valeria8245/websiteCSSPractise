@@ -2,22 +2,24 @@
     cursor: pointer;
  }
  .navbar{
+  display: flex;
    height: 60px;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 1px solid #eceff1
  } 
  .nav-menu{
    display: flex;
    align-items: center;
-   margin: 0 auto;
-   padding-left: 280px;
+   width: 100%;
+   justify-content: center;
  }
  .ul-header{
     list-style: none;
     display: flex;
+    margin-left: 280px;
  }
  .ul-header li{
     margin-right: 20px;
@@ -65,15 +67,45 @@
     border: none;
     background: none;
     cursor: pointer;
+ }
+ .buttons-header-right-shopping-bag{
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: block;
  }  
+ .buttons-header-right-heart{
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: block;
+ }
+ .block-after-header-700px-below{
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 60px;
+  margin-bottom: -70px;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  display: block;
+  cursor: pointer;
+ }
+ .h-in-block-after-header-700px-below{
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+ }
  .h1-main{
    margin-top: 100px;
    display: flex;
    flex-wrap: wrap;
-   width: 100%;
+   width: 90%;
    font-family: Arial, Helvetica, sans-serif;
    font-weight: lighter;
-   font-size: 30px;
+   font-size: 2rem;
    letter-spacing: 1px;
    padding: 0 20px;
  }
@@ -84,6 +116,7 @@
    letter-spacing: 1px;
    margin: 0;
    padding: 0 20px;
+   display: flex;
  }
  .catalog-menu{
    display: flex;
@@ -107,6 +140,9 @@
    transition: border-bottom 0s ease;
    cursor: pointer;
  }
+ .burger-icon{
+    display: none;
+ }
  .ul-main li:hover{
    border-bottom: 3px solid black;
  }
@@ -120,7 +156,7 @@
    height: 40px;
    width: 140px;
    cursor: pointer;
-   margin-left: 740px;
+   
  }
  .gallery-container{
   padding: 0 20px;
@@ -140,6 +176,8 @@
    cursor: pointer;
    transition: transform 0.2s;
    text-align: bottom;
+  flex-direction: column;
+  text-align: center;
  }
  .gallery-p-style {
    font-size: 15px;
@@ -161,4 +199,104 @@
  .txt-gallery-under-img{
   background-color: rgb(255, 255, 255);
   padding: 10px 10px 15px;
+ }
+ @media screen and (max-width: 1800px) {
+  .gallery{
+    grid-template-columns: auto auto auto auto;
+  }
+ }
+ @media screen and (max-width: 1500px) {
+  .gallery{
+    grid-template-columns: auto auto auto;
+  }
+    .ul-header {
+      margin-left: 200px;
+    }
+    .h1-main{
+      font-size: 28px;
+    }
+ }
+ @media screen and (max-width: 1000px){
+  .gallery{
+    grid-template-columns: auto auto;
+  }
+   .ul-header{ 
+     margin-left: 0px; 
+     padding: 0 0 0 10px;
+  } 
+  .h1-main {
+      font-size: 26px;
+  }
+  .p-main {
+     font-size: 14px;
+ }
+ .ul-main{
+  display: none;
+ }
+ .burger-icon{
+  display: block;
+  width: 50px;
+  padding: 0 15px;
+  cursor: pointer;
+ }
+
+ }
+ @media screen and (max-width: 700px) {
+  .gallery{
+grid-template-columns: auto;  
+}
+ .nav-txt-p {
+   margin-left: 0;
+   font-size: 13px;
+ }
+
+ .nav-txt-p-lighter {
+  font-size: 10px;
+  display: none;
+ }
+ .h1-main {
+   font-size: 24px;
+ }
+ .p-main{
+  font-size: 10px;
+ }
+ .buttons-header-right-shopping-bag{
+  display: none;
+ }
+ .buttons-header-right-heart{
+  display: none;
+ }
+ .buttons-header-right{
+  padding-left: 0;
+ }
+ .logo-adidas{
+  justify-content: center ;
+ }
+ }
+ 
+ @media screen and (max-width: 768px) {
+   .nav-menu {
+     width: 100%;
+   }
+   .ul-header li {
+     margin: 10px 0;
+   }
+
+     .p-main {
+       font-size: 12px;
+     }
+ }
+
+ @media screen and (max-width: 768px) { 
+   .p-main {
+     width: 90%;
+     padding: 0 20px
+   }
+
+ }
+
+ @media screen and (max-width: 1200px){
+  .search-input{
+    width: 90px;
+  }
  }
