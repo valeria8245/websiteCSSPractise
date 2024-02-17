@@ -1,0 +1,12 @@
+
+div{
+  border: 1px solid black;
+  width: 100px;
+  border-radius: 10px;
+  background-color: lightblue;
+
+}
+.test {
+  display: inline-block;
+  padding: 35px;
+}
