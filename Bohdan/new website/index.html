@@ -23,12 +23,33 @@
     <div class="nav-button-container">
       <button class="main-button-started">Sign Up</button>
     </div>
+    <div>
+      <button class="burger" onClick="Myburger()">Click</button>
+    </div>
   </div>
+
+  <script>
+    function Myburger() {
+      //changing menu-list-JS to block
+      var list = document.getElementById("menu-list-JS");
+      var subtitle = document.getElementById("logo");
+
+      if (list.style.display === "none") {
+        subtitle.style.display = "none";
+        list.style.display = "block";
+      } else {
+        list.style.display = "none";
+        subtitle.style.display = "block";
+      }
+    }
+  </script>
 
   <section>
     <div class="main-container">
       <div class="main-text-content">
-        <h5 class="main-subtitle">Lorem, ipsum dolor sit adipisicing elit</h5>
+        <img id="logo" src="images/logo.png" alt="logo" width="70px">
+        <h5 id="menu-list-JS">Lorem, ipsum dolor sit amet consectetur adipisicing elit</h5>
+        <h5 id="main-subtitle-JS" class="main-subtitle">Lorem, ipsum dolor sit adipisicing elit</h5>
         <h1 class="main-headline">Lorem ipsum dolor sit amet consectetur elit. Quisquam, voluptatum.</h1>
         <br>
         <p class="main-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid ipsam eum, tenetur
@@ -109,6 +130,16 @@
   <div class="main-image-content">
     <img src="images/spag.jpg" alt="tractor" width="650px">
   </div>
+
+  <div>
+    <button onclick="document.getElementById('myImage').src='images/spaggheti.png'">Change the image</button>
+
+    <img id="myImage" src="images/tractor.png" alt="tractor" width="300px">
+  
+    <button onclick="document.getElementById('myImage').src='images/tractor.png'">Change the image</button>
+  </div>
+
+
 
 
 </body>

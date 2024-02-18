@@ -225,6 +225,23 @@ section::before {
     margin-right: 20px;
 }
 
+.burger{
+    width: 43px;
+    display: none;
+    cursor: pointer;
+}
+
+#menu-list-JS{
+    display: none;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #6d1818;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
 
 /* when screen is smaller adapt it*/
 @media screen and (max-width: 1800px) {
@@ -252,15 +269,26 @@ section::before {
 }
 
 @media screen and (max-width: 700px) {
+    .nav-menu{
+        display: none;
+    }
+    .nav-button-container{
+        display: none;
+    }
     .main-image-content {
         display: none;
+    }
+
+
+    .burger{
+        display: block;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .nav-menu {
+    /* .nav-menu {
         display: none;
-    }
+    } */
 }
 
 @media screen and (max-width: 430px) {
