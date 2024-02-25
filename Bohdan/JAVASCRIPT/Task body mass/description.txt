@@ -7,7 +7,7 @@ BMI Формула: BMI = weight / (height * height)
 
 Interpretation:
 
-BMI less than 18.5: Underweight
+BMI < 18.5: Underweight
 BMI between 18.5 and 24.9: Normal weight
 BMI between 25 and 29.9: Overweight
 BMI 30 or greater: Obese
