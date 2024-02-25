@@ -1,0 +1,13 @@
+Всім привіт,
+
+Потрібно зробити програму, яка буде рахувати body mass index,
+юзер буде вказувати свою вагу та ріст. Після того програма має вказити чотири варіанти:
+
+BMI Формула: BMI = weight / (height * height)
+
+Interpretation:
+
+BMI less than 18.5: Underweight
+BMI between 18.5 and 24.9: Normal weight
+BMI between 25 and 29.9: Overweight
+BMI 30 or greater: Obese
