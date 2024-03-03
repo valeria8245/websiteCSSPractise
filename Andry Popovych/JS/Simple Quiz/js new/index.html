@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simple Quiz</h1>
+
+      <form id="quizForm">
+        <p class="p-question">Назвіть країну-банкіра всієї планети</p>
+        <label><input type="radio" name="option" value="США" /> США</label>
+        <label
+          ><input type="radio" name="option" value="Україна" /> Україна</label
+        >
+        <label
+          ><input type="radio" name="option" value="Швейцарія" />
+          Швейцарія</label
+        >
+      </form>
+      <button onclick="submitAnswer()">Відповісти</button>
+      <p id="feedback"></p>
+    </div>
+
+    <script>
+      const correctAnswer = "Швейцарія";
+
+      function submitAnswer() {
+        const selectedOption = document.querySelector(
+          'input[name="option"]:checked'
+        );
+
+        if (selectedOption) {
+          const feedback = document.getElementById("feedback");
+          const userAnswer = selectedOption.value;
+
+          if (userAnswer === correctAnswer) {
+            feedback.innerHTML = "Правильно!✔️";
+          } else {
+            feedback.innerHTML = "Відповідь не правильна.❌ Спробуйте ще раз.";
+          }
+        } else {
+          alert("Будь ласка, оберіть відповідь");
+        }
+      }
+    </script>
+  </body>
+</html>
