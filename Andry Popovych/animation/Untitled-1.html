@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .cube {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        animation: move 2s linear infinite alternate;
+        color: white;
+      }
+      .cube:hover {
+        animation-play-state: paused;
+        animation-fill-mode: forwards;
+        justify-content: center;
+        background-color: pink;
+        width: 50px;
+        height: 50px;
+        top: 50px;
+      }
+
+      @keyframes move {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: calc(50% - 50px);
+        }
+      }
+      .cube2 {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        animation: moveDown 2s linear infinite alternate;
+      }
+
+      @keyframes moveDown {
+        0% {
+          top: 0;
+        }
+        100% {
+          top: calc(100% - 50px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cube">The cube.</div>
+    <div class="cube2">The cube2.</div>
+  </body>
+</html>
