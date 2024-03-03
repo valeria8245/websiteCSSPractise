@@ -33,7 +33,7 @@
         function SubmitAnswer(){
             const options = document.querySelector('input[name="option"]:checked');
 
-            if(options !== null){
+            if(options){
                 const feedback = document.getElementById('feedback');
                 feedback.innerHTML = options.value;
             }
