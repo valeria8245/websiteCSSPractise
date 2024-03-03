@@ -27,6 +27,7 @@
 
     </div>
 
+
     <script>
         const correctAnswer = "Швейцарія";
         
@@ -35,7 +36,13 @@
 
             if(options){
                 const feedback = document.getElementById('feedback');
-                feedback.innerHTML = options.value;
+
+                if(options.value === correctAnswer){
+                    feedback.textContent = 'Відповідь вірна';
+                }
+                else{
+                    feedback.textContent = 'Відповідь не вірна';
+                }
             }
             else{
                 alert('Виберіть варіант відповіді');
