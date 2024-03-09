@@ -32,7 +32,8 @@
 
         console.log(quotes);
         function generateQuote(){
-
+            document.querySelector('.quote').innerHTML = quotes[0].text;
+            document.querySelector('.author').innerHTML = quotes[0].author;
         };
     </script>
 </body>
