@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор цитат</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Генерація цитат</h1>
+
+      <div class="quotes-container">
+        <p class="quote"></p>
+        <h6 class="author"></h6>
+        <img id="image" src="" alt="портрет" width="200px" height="290px" />
+      </div>
+      <button onclick="GenerateQuotes()">Згенерувати цитату</button>
+    </div>
+
+    <script>
+      const quotes = [
+        {
+          text: "Любіть Україну як сонце, як весну, як свою матір!",
+          author: "Тарас Шевченко",
+          image: "Taras.png",
+        },
+        {
+          text: "Життя — це не лише той час, який пройшов, але й той, який залишився у твоїй душі.",
+          author: "Григорій Сковорода",
+          image: "Skovoroda.jpg",
+        },
+        {
+          text: "Велич людини полягає в її здатності любити, прощати і надіятися.",
+          author: "Леся Українка",
+          image: "Lesya.jpg",
+        },
+      ];
+
+      let lastRandomIndex = -1;
+
+      function getRandomQuote() {
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * quotes.length);
+        } while (randomIndex === lastRandomIndex);
+        lastRandomIndex = randomIndex;
+        return quotes[randomIndex];
+      }
+
+      function setQuoteContent() {
+        const randomQuote = getRandomQuote();
+        const quoteElement = document.querySelector(".quote");
+        const authorElement = document.querySelector(".author");
+        const imageElement = document.getElementById("image");
+
+        quoteElement.textContent = randomQuote.text;
+        authorElement.textContent = randomQuote.author;
+        imageElement.src = randomQuote.image;
+      }
+
+      function GenerateQuotes() {
+        setQuoteContent();
+      }
+    </script>
+  </body>
+</html>
