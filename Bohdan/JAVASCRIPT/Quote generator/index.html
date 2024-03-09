@@ -32,8 +32,9 @@
 
         console.log(quotes);
         function generateQuote(){
-            document.querySelector('.quote').innerHTML = quotes[0].text;
-            document.querySelector('.author').innerHTML = quotes[0].author;
+            const random = Math.floor(Math.random() * quotes.length);
+            document.querySelector('.quote').innerHTML = quotes[random].text;
+            document.querySelector('.author').innerHTML = quotes[random].author;
         };
     </script>
 </body>
