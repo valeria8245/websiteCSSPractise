@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Генерація цитат</h1>
-        
-        <div class="quotes-content">
-            <h3 class="quote"></h3>
-            <h6 class="author"></h6>
+    
+    <div class="quotes-content">
+        <div class="container">
+            <h1>Генерація цитат</h1>
+            <div class="content-container">
+                <div class="image-container">
+                    <img id="image-author" alt="author">
+                </div>
+                <div class="text-container">
+                    <h3 class="quote"></h3>
+                    <h6 class="author"></h6>
+                </div>
+            </div>
             <button onclick="generateQuote()">Згенерувати цитату</button>
         </div>
     </div>
@@ -20,23 +27,26 @@
     <script>
         const quotes = [
             {
-                "text": 'Борітеся – поборете, Вам Бог помагає!', "author": "Тарас Шевченко"
+                "text": 'Борітеся – поборете, Вам Бог помагає!', "author": "Тарас Шевченко", "image": "Taras.jpg"
             },
             {
-                "text": 'Все, що не робиться, все на краще.', "author": "Тарас Шевченко"
+                "text": 'Все, що не робиться, все на краще.', "author": "Тарас Шевченко", "image": "Taras2.jpg"
             },
             {
-                "text": 'Не вміючи літати, не вивчиш плавати.', "author": "Тарас Шевченко"
+                "text": 'Не вміючи літати, не вивчиш плавати.', "author": "Тарас Шевченко", "image": "Taras.jpg"
             }
         ];
 
         console.log(quotes);
+
         function generateQuote(){
             const random = Math.floor(Math.random() * quotes.length);
             document.querySelector('.quote').innerHTML = quotes[random].text;
             document.querySelector('.author').innerHTML = quotes[random].author;
-            
+            document.getElementById('image-author').src = quotes[random].image;
         };
+
+        generateQuote();
     </script>
 </body>
 </html>
