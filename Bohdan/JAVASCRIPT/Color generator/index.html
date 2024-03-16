@@ -9,8 +9,8 @@
 <body>
     
     <div class="container">
-        <h1>Color generator</h1>
-        <button onclick="generateColor">Generate</button>
+        <h1 id="heading">Color generator</h1>
+        <button onclick="generateColor()">Generate</button>
     </div>
 
     <script>
@@ -62,7 +62,9 @@
 
         function generateColor(){
             const random = Math.floor(Math.random() * colors.length);
-
+ 
+            document.body.style.backgroundColor = colors[random].hex;
+            document.getElementById('heading').style.color = colors[random].text;
         };
     </script>
 </body>
