@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online shop</title>
+  <link rel="stylesheet" href="style.listup.css">
+</head>
+
+<body>
+    <h1>To do list</h1>
+
+<div class="newTask">
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button>Add</button> 
+</div>
+
+<h2>Tasks</h2>
+<div class="tasks">
+    <ul class="taskList">
+        <li>Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li>
+    </ul>
+</div>
+
+<script>
+    function addTask(){
+        const taskInput = document.getElementById('taskInput');
+        const taskList = ocument.getElementById('taskList');
+
+        if(taskInput.value !==''){
+            const newTask = document.createElement('li');
+            const newbutton = document.createElement('button');
+            newButton.innerHTML = "X"
+            newButton.className = "deleteButton";
+            newButton.onclick = function(){
+                taskList.removerChild(newTask)
+            }
+           
+            newTask.innerHTML = taskInput.value;
+            taskList.appendChild(newButton);
+            taskList.appendChild(newTask);
+
+            taskInput.value = '';
+        }
+    }
+
+    
+</script>
+
+</body>
+</html>
