@@ -1,0 +1,43 @@
+#colorDisplay{
+    width: 130px;
+    height: 80px;
+    padding-top: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-image: url(bg\ img.jpg);
+}
+.container{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+h1{
+    font-family: sans-serif;
+
+}
+button{
+    width: 100px;
+    height: 60px;
+    background-color: rgb(186, 255, 146);
+    border: 1px solid blue;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.1s ease;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+  
+  button:active {
+    transform: scale(0.8);
+  }
+#generatedGradient {
+    width: 130px;
+    height: 130px;
+    margin-top: 20px;
+  }
