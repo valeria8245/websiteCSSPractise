@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Level 1</h1>
+    <h3 id="health">Health: </h3>
     <div class="container">
-
     </div>
 
     <script>
+        const doorUrl = 'https://picsum.photos/200/300';
+        const openDoors = 'https://picsum.photos/200/300?grayscale';
+
+        let numberDoors = 5;
+        let health = 2;
+
+        const healthElement = document.getElementById('health');
+        healthElement.textContent += health;
 
         const container = document.querySelector('.container');
-        for(let i = 1; i < 6; i++) {
+        for(let i = 1; i <= numberDoors; i++) {
             const door = document.createElement('div');
+            door.style.backgroundImage = `url(${doorUrl})`;
+            door.style.backgroundSize = 'cover';
+            door.style.backgroundPosition = 'center';
+            door.style.width = '200px';
+            door.style.height = '300px';
             door.textContent = 'Door ' + i;
+            // door.classList.add('door');
             door.addEventListener('click', () => openDoor(door, i));
             container.appendChild(door);
         }
@@ -33,6 +47,12 @@
                 door.textContent = '😞';
                 door.style.fontSize = '50px';
                 door.style.backgroundColor = 'red';
+                health--;
+                healthElement.textContent = 'Health: ' + health;
+                if(health === 0) {
+                    alert('Game Over');
+                    window.location.href = 'index.html';
+                }
             }
         }
 
