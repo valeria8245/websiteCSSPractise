@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Level 1</h1>
-    <h3 id="health">Health: </h3>
-    <div class="container">
+    <div class="content">
+        <h1 id="level">Level </h1>
+        <h3 id="health">Health: </h3>
+        <div class="container">
+    </div>
     </div>
 
     <script>
@@ -19,6 +21,9 @@
         let level = 1;
         let numberDoors = 5;
         let health = 12;
+
+        const levelElement = document.getElementById('level');
+        levelElement.textContent += level;
 
         const healthElement = document.getElementById('health');
         healthElement.textContent += health;
@@ -42,6 +47,8 @@
                 door.textContent = '🎉';
                 door.style.fontSize = '50px';
                 door.classList.add('doorOpened');
+                level++;
+                levelElement.textContent = 'Level ' + level;
                 //delete privious doors
                 container.innerHTML = '';
                 generateLevel(numberDoors++);

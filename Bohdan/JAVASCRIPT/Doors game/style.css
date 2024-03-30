@@ -6,12 +6,21 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
 
 .container{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
-    width: 100vw;
+    width: 90%;
     margin-top: 200px;
 }
 
