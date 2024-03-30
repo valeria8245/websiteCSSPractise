@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Level 1</h1>
-    <h3 id="health">Health: </h3>
-    <div class="container">
+    <div class="content">
+        <h1 id="level">Level </h1>
+        <h3 id="health">Health: </h3>
+        <div class="container">
+    </div>
     </div>
 
     <script>
@@ -20,6 +22,9 @@
         let numberDoors = 5;
         let health = 12;
 
+        const levelElement = document.getElementById('level');
+        levelElement.textContent += level;
+
         const healthElement = document.getElementById('health');
         healthElement.textContent += health;
 
@@ -27,21 +32,27 @@
         generateLevel(numberDoors);
 
         function generateLevel(numberDoors){
+            
+            const correctDoor = Math.floor(Math.random() * numberDoors) + 1;
+
             for(let i = 1; i <= numberDoors; i++) {
-            const door = document.createElement('div');
-            door.classList.add('door');
-            door.addEventListener('click', () => openDoor(door, i));
-            container.appendChild(door);
+                const door = document.createElement('div');
+                door.classList.add('door');
+                door.addEventListener('click', () => openDoor(door, i, correctDoor));
+                container.appendChild(door);
             }
         }
+        
 
-        const x = Math.floor(Math.random() * 5) + 1;
 
-        function openDoor(door, doorNumber){
-            if(doorNumber === x) {
+
+        function openDoor(door, doorNumber, correctDoor){
+            if(doorNumber === correctDoor) {
                 door.textContent = '🎉';
                 door.style.fontSize = '50px';
                 door.classList.add('doorOpened');
+                level++;
+                levelElement.textContent = 'Level ' + level;
                 //delete privious doors
                 container.innerHTML = '';
                 generateLevel(numberDoors++);
