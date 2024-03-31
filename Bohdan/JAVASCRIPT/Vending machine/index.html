@@ -49,11 +49,10 @@
     <script>
         const buttons = document.querySelector('.numbers');
         const display = document.getElementById('display');
-        const products = document.querySelectorAll('.product');
-       
+
         buttons.addEventListener('click', (e) => {
             if (e.target.id === 'enter') {
-                display.innerHTML = '';
+                alert("Дякую за покупку!");
             } else if (e.target.id === 'delete') {
                 display.innerHTML = '';
             } else {
