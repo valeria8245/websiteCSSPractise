@@ -1,0 +1,148 @@
+ h1 {
+     display: flex;
+     justify-content: center;
+     font-size: 60px;
+     color: rgb(107, 112, 127);
+     font-family: Arial, Helvetica, sans-serif;
+     margin-top: 18px;
+ }
+
+ p {
+     display: flex;
+     justify-content: center;
+     color: red;
+ }
+
+ #health {
+     color: green;
+     font-family: Arial, Helvetica, sans-serif;
+     display: flex;
+     justify-content: center;
+ }
+  #health2 {
+      color: green;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+  }
+
+ .button-container {
+     display: flex;
+     justify-content: center;
+ }
+
+ button {
+     width: 130px;
+     height: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ #result {
+     display: flex;
+     justify-content: center;
+     color: rgb(0, 0, 0);
+     font-size: 40px;
+ }
+
+ .door {
+     width: 260px;
+     height: 550px;
+     background-image: url('doors.png');
+     background-size: cover;
+     display: inline-block;
+     justify-content: center;
+     flex-direction: row;
+     margin: 10px;
+     cursor: pointer;
+     margin-left: 10px;
+ }
+
+ .door2 {
+     width: 260px;
+     height: 550px;
+     background-image: url('helldoor.jpg');
+     background-size: cover;
+     display: inline-block;
+     justify-content: center;
+     flex-direction: row;
+     margin: 10px;
+     cursor: pointer;
+     margin-left: 10px;
+ }
+
+ .winning-image {
+     width: 340px;
+     height: 550px; 
+ }
+
+ #level1 {
+     background-image: url(bg.jpg);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 1100px;
+ }
+ #level2{
+    background-image: url(hellbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+ }
+ #level2 {
+     background-image: url('hellbg.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+
+ #level2 h1 {
+     font-size: 60px;
+     color: rgb(107, 112, 127);
+     font-family: Arial, Helvetica, sans-serif;
+     margin-top: 18px;
+ }
+
+ #level2 p {
+     color: red;
+ }
+
+ #level2 #health2 {
+     color: green;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ #level2 .button-container {
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+     /* доданий margin-top для відступу від кнопки */
+ }
+
+ #level2 button {
+     width: 130px;
+     height: 40px;
+     font-size: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ #level2 #result2 {
+     color: black;
+     font-size: 40px;
+     margin-top: 20px;
+     /* доданий margin-top для відступу від результуючого тексту */
+ }
