@@ -40,18 +40,28 @@
                 <button id="8">8</button>
                 <button id="9">9</button>
                 <button id="0">0</button>
-                <button id="enter">OK</button>
+                <button id="enter">BUY</button>
+                <button id="delete">DELETE</button>
             </div>
         </div>
     </div>
 
     <script>
+        const buttons = document.querySelector('.numbers');
+        const display = document.getElementById('display');
+        const products = document.querySelectorAll('.product');
+       
+        buttons.addEventListener('click', (e) => {
+            if (e.target.id === 'enter') {
+                display.innerHTML = '';
+            } else if (e.target.id === 'delete') {
+                display.innerHTML = '';
+            } else {
+                display.innerHTML += e.target.id;
+                console.log(e.target.id);
+            }
+        });
 
-        let cheeseLays = 3;
-
-        let display = document.getElementById('display');
-        let buttons = document.getElementById('1');
-        let buttons2 = document.getElementById('2');
 
     </script>
 
