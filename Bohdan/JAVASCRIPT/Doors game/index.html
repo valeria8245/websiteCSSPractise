@@ -19,9 +19,10 @@
         // const openDoors = 'https://picsum.photos/200/300?grayscale';
 
         let level = 1;
-        let numberDoors = 5;
+        let numberDoors = 2;
         let health = 12;
 
+        let x;
         const levelElement = document.getElementById('level');
         levelElement.textContent += level;
 
@@ -32,22 +33,19 @@
         generateLevel(numberDoors);
 
         function generateLevel(numberDoors){
-            
-            const correctDoor = Math.floor(Math.random() * numberDoors) + 1;
+
+            const randomDoors = Math.floor(Math.random() * numberDoors) + 1;
 
             for(let i = 1; i <= numberDoors; i++) {
-                const door = document.createElement('div');
-                door.classList.add('door');
-                door.addEventListener('click', () => openDoor(door, i, correctDoor));
-                container.appendChild(door);
+            const door = document.createElement('div');
+            door.classList.add('door');
+            door.addEventListener('click', () => openDoor(door, i, randomDoors));
+            container.appendChild(door);
             }
         }
-        
 
-
-
-        function openDoor(door, doorNumber, correctDoor){
-            if(doorNumber === correctDoor) {
+        function openDoor(door, doorNumber, randomDoors){
+            if(doorNumber === randomDoors) {
                 door.textContent = '🎉';
                 door.style.fontSize = '50px';
                 door.classList.add('doorOpened');
