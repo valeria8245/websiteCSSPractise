@@ -17,12 +17,12 @@
             <div class="product">
                 <h3 class="index">2</h3>
                 <img src="https://www.lays.com/sites/lays.com/files/2022-05/XL%20Lays%20Flamin%20Hot%20New.png" alt="">
-                <p class="price">39 грн</p>
+                <p class="price">49 грн</p>
             </div>
             <div class="product">
                 <h3 class="index">3</h3>
                 <img src="https://target.scene7.com/is/image/Target/GUEST_6060c181-530b-4c60-b8f9-fc427c7f3790?wid=488&hei=488&fmt=pjpeg" alt="">
-                <p class="price">39 грн</p>
+                <p class="price">79 грн</p>
             </div>
         </div>
 
@@ -46,21 +46,24 @@
         </div>
     </div>
 
-    <script>
-        const buttons = document.querySelector('.numbers');
-        const display = document.getElementById('display');
 
-        buttons.addEventListener('click', (e) => {
-            if (e.target.id === 'enter') {
+
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelector('.numbers');
+
+        buttons.addEventListener('click', (event) => {
+
+            if (event.target.id === 'enter') {
                 alert("Дякую за покупку!");
-            } else if (e.target.id === 'delete') {
+            } else if (event.target.id === 'delete') {
                 display.innerHTML = '';
             } else {
-                display.innerHTML += e.target.id;
-                console.log(e.target.id);
+                display.innerHTML += event.target.id;
+                console.log(event.target.id);
             }
-        });
 
+        });
 
     </script>
 
