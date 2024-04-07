@@ -29,6 +29,7 @@
 
         <div class="holder">
             <div id="display"></div>
+            <h2 id="balance"></h2>
             <div class="numbers">
                 <button id="1">1</button>
                 <button id="2">2</button>
@@ -51,6 +52,13 @@
     <script>
         const display = document.getElementById('display');
         const buttons = document.querySelector('.numbers');
+        const balanceDisplay = document.getElementById('balance');
+
+        let balance = 30;
+
+        balanceDisplay.innerHTML = `Баланс: ${balance} грн`;
+
+
 
         buttons.addEventListener('click', (event) => {
 
