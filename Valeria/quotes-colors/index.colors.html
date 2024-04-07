@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color generator</title>
+    <link rel="stylesheet" href="style.colors.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="heading">Color generator</h1>
+        <button id="button-color" onclick="generateColor()">Generate</button>
+    </div>
+
+    <script>
+        const colors = [
+            {
+                hex: '#d35400',
+                text: '#652800'
+            },
+            {
+                hex: '#27ae60',
+                text: '#006229'
+            },
+            {
+                hex: '#2980b9',
+                text: '#004d66'
+            },
+            {
+                hex: '#8e44ad',
+                text: '#4d2350'
+            },
+            {
+                hex: '#f1c40f',
+                text: '#665c00'
+            },
+            {
+                hex: '#e74c3c',
+                text: '#661a00'
+            },
+            {
+                hex: '#2c3e50',
+                text: '#13191f'
+            },
+            {
+                hex: '#f39c12',
+                text: '#664d00'
+            },
+            {
+                hex: '#c0392b',
+                text: '#661a00'
+            },
+            {
+                hex: '#16a085',
+                text: '#004d3a'
+            }
+        ];
+
+        function generateColor() {
+            const random = Math.floor(Math.random() * colors.length)
+            document.body.style.backgroundColor = colors[random].hex;
+            document.getElementById("heading").style.color = colors[random].text;
+            document.getElementById("button-color").style.backgroundColor = colors[random].text;
+        };
+
+    </script>
+
+</body>
+</html>

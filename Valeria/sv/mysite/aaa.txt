@@ -1,0 +1,19 @@
+<div class="container-navbar">
+        <a href="file:///C:/Users/Usuario/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/website%20css/websiteCSSPractise/Valeria/new%20website/index.portfolio.html"><img src="https://assets.portfolio.hu/images/portfolio_black.svg" class="navbar-logo" alt="logo"></a>
+        <ul class="navbar">
+            <li><a class="navbar-link" href="file:///C:/Users/Usuario/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/website%20css/websiteCSSPractise/Valeria/new%20website/index.new.html">Home</a></li>
+            <li><a class="navbar-link" href="file:///C:/Users/Usuario/OneDrive/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/website%20css/websiteCSSPractise/Valeria/sv/index.task.html">About me</a></li>
+            <li><a class="navbar-link" href="">Contact</a></li>
+        </ul>
+
+  </div> 
+
+{}  
+
+    .body (style)
+        background-image: url(https://img.freepik.com/free-photo/white-painted-wall-texture-background_53876-138197.jpg);
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+
+
+      <img src="https://assets.portfolio.hu/images/portfolio_black.svg" alt="logo">

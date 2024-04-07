@@ -1,0 +1,29 @@
+html {
+    background: linear-gradient(to bottom right, rgb(108, 242, 211), rgb(1, 161, 166));
+}
+.container {
+    text-align: center;
+    
+}
+.button-container {
+    align-items: center;
+    justify-content: space-between;
+    display:inline-block;
+    width: 700px;
+    margin-top: 10px;
+    color: whitesmoke;
+}
+button {
+    color: whitesmoke; 
+    font-weight: bold;
+    background-color: rgb(44, 44, 200);
+    border: 2.1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer; 
+    gap: 10px;
+    margin: 15px; 
+}
+button:hover {
+    background-color: rgb(58, 142, 245);
+}
