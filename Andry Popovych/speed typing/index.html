@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed typing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Speed typing</h1>
+      <h3 id="input-text"></h3>
+      <div class="content">
+        <h5>Час <span id="time"></span></h5>
+        <h5>Accuracy<span id="accuracy"></span></h5>
+      </div>
+      <input type="text" oninput="checkAccuracy(event)" />
+      <button onclick="reset()">reset</button>
+    </div>
+
+    <script>
+      const inputText = "input text";
+      document.getElementById("input-text").innerText = inputText;
+
+      let startTime = null;
+      let timerStarted = false;
+      let interval = null;
+      let correct = 0;
+      let wrong = 0;
+
+      function startTimer() {
+        if (!timerStarted) {
+          startTime = 60 * 1000;
+          interval = setInterval(updateTimer, 1000);
+          timerStarted = true;
+        }
+      }
+
+      function updateTimer() {
+        startTime -= 1000;
+        document.getElementById("time").innerText = startTime / 1000;
+        if (startTime === 0) {
+          clearInterval(interval);
+          alert("time is over");
+        }
+      }
+
+      function accuracy() {
+        let accuracyPercentage = (correct / (correct + wrong)) * 100;
+        document.getElementById("accuracy").innerText = accuracyPercentage.toFixed(2) + "%";
+      }
+
+      function checkAccuracy(event) {
+        startTimer();
+        let typedText = event.target.value;
+        let minLength
+        correct = 0;
+        wrong = 0;
+
+        if (typedText.length < inputText.length) {
+          minLength = typedText.length;
+      } else {
+          minLength = inputText.length;
+      }
+
+        for (let i = 0; i < minLength; i++) {
+          if (typedText[i] === inputText[i]) {
+            correct++;
+          } else {
+            wrong += 2.5;
+          }
+        }
+
+        accuracy();
+      }
+
+      function reset() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
