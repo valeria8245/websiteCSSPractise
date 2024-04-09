@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vending Machine</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="vending-machine">
+      <div class="item" id="item1" onclick="selectItem(1)">
+        <img src="lays.png" alt="Item 1" />
+        <p>lay's</p>
+        <p class="price">$1.99</p>
+      </div>
+      <div class="item" id="item2" onclick="selectItem(2)">
+        <img src="reeses.jpg" alt="Item 2" />
+        <p>Reese's</p>
+        <p class="price">$2</p>
+      </div>
+      <div class="item" id="item3" onclick="selectItem(3)">
+        <img src="doritos.jpg" alt="Item 3" />
+        <p>Doritos</p>
+        <p class="price">$3.99</p>
+      </div>
+      <div class="item" id="item4" onclick="selectItem(4)">
+        <img src="hersheys.jpg" alt="Item 4" />
+        <p>HERSHEY'S</p>
+        <p class="price">$4.2</p>
+      </div>
+      <div class="item" id="item5" onclick="selectItem(5)">
+        <img src="cheetos.jpg" alt="Item 5" />
+        <p>Crunchy Cheetos</p>
+        <p class="price">$5.49</p>
+      </div>
+      <div class="item" id="item6" onclick="selectItem(6)">
+        <img src="m&ms.png" alt="Item 6" />
+        <p>M&M's</p>
+        <p class="price">$6.1</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="display"></div>
+      <div class="food-pick">
+        <button onclick="purchase()">Buy</button>
+        <button onclick="clearDisplay()">Cancel</button>
+      </div>
+      <p id="balance">Your balance: $<span id="balanceAmount"></span> </p>
+    </div>
+
+    <script>
+      let selectedItem = 0;
+      let balance = 10.3;
+      const productPrice = document.querySelector('.price');
+      productPrice.values = [1.99, 2, 3.99, 4.2, 5.49, 6.1];
+
+     
+
+      function selectItem(id) {
+        selectedItem = id;
+        resetButtons();
+        document.getElementById("item" + id).classList.add("selected");
+        newBalanceDisplay();
+      }
+
+      function purchase() {
+        if (selectedItem !== 0) {
+          const itemPrice = document.getElementById("item" + selectedItem).querySelectorAll("p")[1].textContent;
+          const price = parseFloat(itemPrice.replace("$", ""));
+          if (price <= balance) {
+            balance -= price;
+            balance = Math.round(balance * 100) / 100; 
+            updateBalanceDisplay();
+            alert("Item " + selectedItem + " purchased for $" + price.toFixed(2) + "!");
+          } else {
+            alert("Your balance is low.");
+          }
+        } else {
+          alert("Please select an item first");
+        }
+      }
+      
+
+      function resetButton() {
+        const items = document.querySelectorAll(".item");
+        items.forEach((item) => {
+          item.classList.remove("selected");
+        });
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").textContent = "";
+      }
+      function updateBalanceDisplay() {
+        document.getElementById("balanceAmount").textContent = balance;
+      }
+
+      const display = document.getElementById("display");
+      document.querySelectorAll(".item").forEach((item) => {
+        item.addEventListener("click", () => {
+          display.textContent = item.id.substring(4);
+        });
+      });
+      updateBalanceDisplay();
+    </script>
+  </body>
+</html>

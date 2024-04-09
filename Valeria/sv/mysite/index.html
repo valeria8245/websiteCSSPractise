@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My site</title>
+    <style>
+    .structure { 
+            background-color: rgb(166, 241, 241);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+    }
+    .profile-pic {
+        border-radius: 50%;
+        width: 150px;
+    }
+    .section {
+      display: inline-block;
+      width: 300px;
+      margin: 20px 0;
+    }
+    .container-navbar {
+      display: flex;
+      justify-content: space-around;
+    }
+    .navbar {
+      list-style-type: none;
+      text-align: left;
+    }
+    .navbar li {
+      display: inline;
+      margin: 0 15px;
+    }
+    .navbar-link {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 0.9em;
+    }
+    .navbar-link:hover {
+      color: violet;
+      text-decoration: underline;
+    }
+    .navbar-logo{
+      width: 180px;
+      height: 30px;
+      text-align: left;
+    }
+    .navbar-logo:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    .gallery {
+      background-color: rgb(166, 241, 241);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery > img {
+      margin: 10px;
+      padding: 5px;
+      width: 300px;
+      height: 200px;
+    }
+
+    .button-sign {
+      background-color: darkkhaki;
+      color: aliceblue;
+      border: 1px solid;
+    }
+    .form-style {
+      background-color: rgb(166, 241, 241);
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      justify-content: center;
+      align-items: center;
+      display: center;
+      padding: 30px;
+    }
+    .content-form {
+      width: 500px;
+      height: 500px;
+      padding: 30px;
+      color: rgb(0, 0, 0);
+      background-color: rgb(166, 241, 241);
+    }
+    .desc {
+      text-align: center;
+      padding: 15px;
+      color: rgb(90, 88, 88);
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    </style>
+</head>
+<body>
+
+<hr>
+<div class="structure">
+<img class="profile-pic" src="https://pbs.twimg.com/profile_images/1695581016558047232/YUp8oeW5_400x400.jpg" alt="elza" />
+<h1>Valeria Marchenko</h1>
+<p>Newcomer in the programming</p> 
+<p></p> 
+<hr>
+<div class="container" src="https://web.telegram.org/a/#1187460097">
+  <div class="section">
+    <h2>I am</h2>
+    <p><em>A student</em></p>
+    <p><em>A reader</em></p>
+    <p><em>A traveler</em></p>
+    <p><em>A translator</em></p>
+  </div>
+
+  <div class="section">
+    <h2>I like to </h2>
+    <p><em>Eat chocolate</em></p>
+    <p><em>Play volleyball</em></p>
+    <p><em>Travel</em></p>
+    <p><em>Translate</em></p>
+  </div>
+
+  </div>
+
+</div>
+
+<hr>
+
+<div class="gallery">
+  <div class="desc">
+    <img src="https://www.thetrainline.com/cms/media/1376/uk-london-tower-bridge-river-thames.jpg?mode=crop&width=1080&height=1080&quality=70" alt="nature" width="240px" height="250px">
+    <p>London</p>
+  </div>
+  <div class="desc">
+    <img src="https://images.unsplash.com/photo-1570698473651-b2de99bae12f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFkcmlkJTJDJTIwc3BhaW58ZW58MHx8MHx8fDA%3D" alt="nature" width="250px" height="300px">
+    <p>Madrid</p>
+  </div>
+    <div class="desc">
+    <img src="https://lp-cms-production.imgix.net/2020-09/500pxRF_100424161.jpg" alt="nature" width="250px" height="400px">
+    <p>New York</p>
+  </div>
+    <div class="desc">
+    <img src="https://i.pinimg.com/736x/cb/08/e3/cb08e39e3614c27de0b71838a8eb6ca2.jpg" alt="nature" width="250px" height="350px">
+    <p>Warsaw</p>
+  </div>
+</div>
+<hr>
+<div class="form-style">
+    <h3>GET IN TOUCH IS EASY</h3>
+
+<form action="submit" class="contact-form">
+<label for="username">Username:</label>
+<br>
+<input class="icon-name" type="text" placeholder="username"><br>
+<br>
+<label for="Password">Password</label><br>
+<input  type="password" placeholder="password"><br><br>
+<br>
+<label for="birthday">Birthday:</label><br>
+<input type="date" id="birthday" name="birthday"><br>
+<br>
+<label for="email">Email:</label>
+<input type="email" placeholder="email">
+<p>
+<input type="submit" value="Submit">
+  <input type="reset" valuee="Reset"></p><br>
+<hr>
+<p>Choose your favourite city:
+</p>
+<input type="radio" id="london" name="fav_city" value="London">
+<label for="london">London</label><br>
+
+<input type="radio" id="madrid" name="fav_city" value="Madrid">
+<label for="madrid">Madrid</label><br>
+
+<input type="radio" id="warsaw" name="fav_city" value="Warsaw">
+<label for="warsaw">Warsaw</label><br>
+</p>
+
+<p>
+  <p>What cities did you visit?</p>
+  <input type="checkbox" id="london" name="city1" value="London">
+<label for="london">London</label><br>
+
+<input type="checkbox" id="madrid" name="city2" value="Madrid">
+<label for="madrid">Madrid</label><br>
+
+<input type="checkbox" id="warsaw" name="city3" value="Warsaw">
+<label for="warsaw">Warsaw</label><br>
+</p>
+<br>
+<label for="favcolor">Select your favourite color:</label><br>
+<input type="color"id="favcolor" name="favcolor" value="#ff0000">
+<br> 
+<p></p>
+<label for="myfile">Select a file:</label><br>
+<input type="file" id="myfile" name="myfile"></p>
+
+<p>
+<h3><b>Click here </b></h3>
+<input type="button" onclick="alert('Hello!')" value="Click me">
+</p> 
+</div>
+
+</form></div>
+
+</body>
+</html>

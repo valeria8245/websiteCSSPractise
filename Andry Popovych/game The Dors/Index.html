@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Doors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="level1">
+        <h1>The Doors. Level 1</h1>
+        <h3 id="health">Health: 3</h3>
+        <div class="button-container">
+          <button onclick="location.reload()">Retry</button>
+        </div>
+        <p>Choose the door:</p>
+        <h2 id="result"></h2>
+        <div id="doors"></div>
+        <button onclick="loadLevel2()">Next Level</button>
+      </div>
+    </div>
+
+    <div id="level2" style="display: none">
+      <h1>The Doors. Level 2</h1>
+      <h3 id="health2">Health: 2</h3>
+      <p>Choose the door:</p>
+      <h2 id="result2"></h2>
+      <div id="doors2"></div>
+    </div>
+
+    <script>
+      const winningDoorImage = "winningDoor.png";
+      const losingDoorImage = "losingDoor.png";
+      let gameWon = false;
+      let gameOver = false;
+      let health = 3;
+
+      for (let i = 1; i <= 5; i++) {
+        const door = document.createElement("div");
+        door.className = "door";
+
+        door.addEventListener("click", () => OpenDoors(i, door));
+        document.getElementById("doors").appendChild(door);
+      }
+
+      const randomDoorNumber = Math.floor(Math.random() * 5) + 1;
+
+      function OpenDoors(doorNumber, doorElement) {
+        if (gameWon || gameOver) return;
+
+        const resultElement = document.getElementById("result");
+        const healthElement = document.getElementById("health");
+
+        if (doorNumber === randomDoorNumber) {
+          resultElement.textContent = "You've won";
+          resultElement.style.color = "green";
+          doorElement.style.backgroundImage = `url('${winningDoorImage}')`;
+          doorElement.classList.add("winning-image");
+          gameWon = true;
+          RemoveEventListeners();
+        } else {
+          resultElement.textContent = "Try again!";
+          doorElement.style.backgroundImage = `url('${losingDoorImage}')`;
+          doorElement.classList.add("losing-image");
+          health--;
+          document.getElementById("health").textContent = `Health: ${health}`;
+          if (health === 2) {
+            document.getElementById("health").style.color = "orange";
+          }
+          if (health === 1) {
+            document.getElementById("health").style.color = "darkred";
+          }
+          if (health === 0) {
+            healthElement.style.color = "red";
+            resultElement.textContent = "Game over!";
+            resultElement.style.color = "red";
+            resultElement.style.fontSize = "80px";
+            gameOver = true;
+            RemoveEventListeners();
+          }
+        }
+      }
+
+      function RemoveEventListeners() {
+        const doors = document.querySelectorAll(".door");
+        doors.forEach((door) => {
+          door.removeEventListener("click", OpenDoors);
+        });
+      }
+
+      function loadLevel2() {
+        document.getElementById("level1").style.display = "none";
+        document.getElementById("level2").style.display = "block";
+
+        let health2 = 2;
+        let gameWon2 = false;
+        let gameOver2 = false;
+
+        for (let i = 1; i <= 3; i++) {
+          const door2 = document.createElement("div");
+          door2.className = "door2";
+
+          door2.addEventListener("click", () => OpenDoors2(i, door2));
+          document.getElementById("doors2").appendChild(door2);
+        }
+
+        const randomDoor2 = Math.floor(Math.random() * 3) + 1;
+
+        function OpenDoors2(doorNumber2, doorElement2) {
+          if (gameWon2 || gameOver2) return;
+
+          const resultElement2 = document.getElementById("result2");
+          const healthElement2 = document.getElementById("health2");
+
+          if (doorNumber2 === randomDoor2) {
+            resultElement2.textContent = "You've won";
+            resultElement2.style.color = "green";
+            doorElement2.style.backgroundImage = 'url("heaven.jpg")';
+            doorElement2.classList.add("winning-image");
+            gameWon2 = true;
+            RemoveEventListeners2();
+          } else {
+            resultElement2.textContent = "Try again!";
+            doorElement2.style.backgroundImage = 'url("helldoor1.jpg")';
+            doorElement2.classList.add("losing-image");
+            doorElement2.style.color = "red";
+            health2--;
+            document.getElementById(
+              "health2"
+            ).textContent = `Health: ${health2}`;
+            if (health2 === 2) {
+              document.getElementById("health2").style.color = "green";
+            }
+            if (health2 === 1) {
+              document.getElementById("health2").style.color = "orange";
+            }
+            if (health2 === 0) {
+              healthElement2.style.color = "red";
+              resultElement2.textContent = "Game over!";
+              resultElement2.style.color = "red";
+              resultElement2.style.fontSize = "80px";
+              gameOver2 = true;
+              RemoveEventListeners2();
+            }
+          }
+        }
+
+        function RemoveEventListeners2() {
+          const doors2 = document.querySelectorAll(".door2");
+          doors2.forEach((door2) => {
+            door2.removeEventListener("click", OpenDoors2);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

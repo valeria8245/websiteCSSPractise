@@ -1,0 +1,29 @@
+p::first-line {
+    color: blue;
+    font-variant: small-caps;
+}
+p::first-letter {
+    color: rgb(35, 35, 124);
+    font-size: x-large;
+    font-weight: bold;
+}
+::marker {
+    color: blueviolet;
+    font-size: 20px;
+}
+::selection {
+    color: aqua;
+    background: rgb(177, 187, 186);
+}
+.cube {
+    width: 100px;
+    height: 100px;
+    background:  violet;
+    position: relative;
+    animation: mymove 5s infinite;
+    animation-direction: alternate;
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 100px;}
+}
