@@ -13,12 +13,14 @@
             <h1>Друк на швидкість</h1>
             <h3 id="input-text"></h3>
             <div class="content">
-                <h5>Час: <span id="time"></span></h5>
-                <h5>Точність: <span id="accuracy"></span></h5>
+                <h5>Час <span id="time"></span></h5>
+                <h5>Точність <span id="accuracy"></span></h5>
             </div>
             <input type="text" onkeydown="input(event)">
-            <button onclick="reset()">Заново</button>
-            <!-- <button onclick="setInterval()">Start</button> -->
+            <div class="button-container">
+                <button onclick="reset()">Заново</button>
+                <button onclick="time(3 * 1000)">Start</button>
+            </div>
         </div>
     </div>
 
@@ -28,16 +30,17 @@
 
         document.getElementById('input-text').innerText = text;
 
-        let startTime = 60 * 1000;
-        
-        setInterval(() => {
-            startTime -= 1000;
-            document.getElementById('time').innerText = startTime / 1000 + " секунд";
-            if(startTime === 0) {
-                clearInterval(inval);
-                alert('Час вийшов');
-            }
-        }, 1000);
+        function time(startTime){
+            let inval = setInterval(() => {
+                startTime -= 1000;
+                document.getElementById('time').innerText = startTime / 1000;
+                if(startTime === 0) {
+                    clearInterval(inval);
+                    alert('Час вийшов');
+                }
+            }, 1000);
+        }
+
         
 
 
