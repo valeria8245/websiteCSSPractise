@@ -8,28 +8,31 @@
 </head>
 <body>
     
-    <div class="container">
-        <h1>Друк на швидкість</h1>
-        <h3 id="input-text"></h3>
-        <div class="content">
-            <h5>Час <span id="time"></span></h5>
-            <h5>Точність <span id="accuracy"></span></h5>
+    <div class="holder">
+        <div class="container">
+            <h1>Друк на швидкість</h1>
+            <h3 id="input-text"></h3>
+            <div class="content">
+                <h5>Час: <span id="time"></span></h5>
+                <h5>Точність: <span id="accuracy"></span></h5>
+            </div>
+            <input type="text" onkeydown="input(event)">
+            <button onclick="reset()">Заново</button>
+            <!-- <button onclick="setInterval()">Start</button> -->
         </div>
-        <input type="text" onkeydown="input(event)">
-        <button onclick="reset()">Заново</button>
     </div>
 
 
     <script>
         const text = "Lorem ipsum dolor";
+
         document.getElementById('input-text').innerText = text;
 
-
-
         let startTime = 60 * 1000;
-        let inval = setInterval(() => {
+        
+        setInterval(() => {
             startTime -= 1000;
-            document.getElementById('time').innerText = startTime / 1000;
+            document.getElementById('time').innerText = startTime / 1000 + " секунд";
             if(startTime === 0) {
                 clearInterval(inval);
                 alert('Час вийшов');
@@ -52,6 +55,7 @@
         }
 
         // перевірка правильності введеного тексту
+            //   луп(і = 0; і < text.length; і++)
         //     таргет - введений текст
         //     text - текст який ми маємо ввести
         //     таргет === text
