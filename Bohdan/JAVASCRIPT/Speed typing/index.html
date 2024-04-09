@@ -15,9 +15,54 @@
             <h5>Час <span id="time"></span></h5>
             <h5>Точність <span id="accuracy"></span></h5>
         </div>
-        <input type="text">
-        <button>Заново</button>
+        <input type="text" onkeydown="input(event)">
+        <button onclick="reset()">Заново</button>
     </div>
 
+
+    <script>
+        const text = "Lorem ipsum dolor";
+        document.getElementById('input-text').innerText = text;
+
+
+
+        let startTime = 60 * 1000;
+        let inval = setInterval(() => {
+            startTime -= 1000;
+            document.getElementById('time').innerText = startTime / 1000;
+            if(startTime === 0) {
+                clearInterval(inval);
+                alert('Час вийшов');
+            }
+        }, 1000);
+        
+
+
+        let correct = 1;
+        let wrong = 1;
+        accuracy(correct, wrong);
+
+        function accuracy(correct, wrong){
+            let accuracy = correct / wrong * 100;
+            document.getElementById('accuracy').innerText = accuracy + "%";
+        }
+
+        function reset() {
+            location.reload();
+        }
+
+        // перевірка правильності введеного тексту
+        //     таргет - введений текст
+        //     text - текст який ми маємо ввести
+        //     таргет === text
+        //         якщо так то correct++
+        //         точність(корект, неправильно)
+        //         якщо ні то wrong++
+        //         точність(корект, неправильно)
+
+
+
+
+    </script>
 </body>
 </html>
