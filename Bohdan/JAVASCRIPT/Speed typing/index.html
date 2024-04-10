@@ -16,7 +16,7 @@
                 <h5>Час <span id="time"></span></h5>
                 <h5>Точність <span id="accuracy"></span></h5>
             </div>
-            <input type="text" onkeydown="input(event)">
+            <input type="text" onkeyup="input(event)">
             <div class="button-container">
                 <button onclick="reset()">Заново</button>
                 <button onclick="time(3 * 1000)">Start</button>
@@ -24,9 +24,11 @@
         </div>
     </div>
 
-
     <script>
-        const text = "Lorem ipsum dolor";
+        const text = "Привіт";
+
+
+
 
         document.getElementById('input-text').innerText = text;
 
@@ -42,20 +44,22 @@
         }
 
         
-
-
         let correct = 1;
-        let wrong = 1;
+        let wrong = 0;
         accuracy(correct, wrong);
 
         function accuracy(correct, wrong){
-            let accuracy = correct / wrong * 100;
-            document.getElementById('accuracy').innerText = accuracy + "%";
+            let accuracy = (correct / (correct + wrong)) * 100;
+            //two digits after comma
+
+            document.getElementById('accuracy').innerText = accuracy.toFixed(2) + "%";
+
         }
 
         function reset() {
             location.reload();
         }
+            
 
         // перевірка правильності введеного тексту
             //   луп(і = 0; і < text.length; і++)
@@ -67,8 +71,21 @@
         //         якщо ні то wrong++
         //         точність(корект, неправильно)
 
+        function input(event){
 
-
+            let target = event.target.value;
+            for(let i = 0; i < target.length; i++){
+                console.log(target[i]);
+                console.log(text[i]);
+                if(target[i] === text[i]){
+                    correct++;
+                    accuracy(correct, wrong);
+                } else {
+                    wrong++;
+                    accuracy(correct, wrong);
+                }
+            }
+        }
 
     </script>
 </body>
