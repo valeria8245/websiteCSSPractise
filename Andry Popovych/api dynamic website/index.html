@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cat Facts and Images API</h1>
+      <h2 id="fact"></h2>
+      <img id="catImage" src="" alt="Cat Image" style="max-width: 400px;" />
+      <button onclick="getFactAndImage()">New Fact and Image</button>
+    </div>
+
+    <script>
+      const factElement = document.getElementById('fact');
+      const catImageElement = document.getElementById('catImage');
+      const imageData = data;
+
+      function getFactAndImage() {
+        fetch('https://meowfacts.herokuapp.com/')
+          .then((response) => response.json())
+          .then((data) => {
+            factElement.textContent = data.data;
+          })
+          .catch((error) => {
+            factElement.textContent = 'Oops! Something went wrong';
+            console.log(error);
+          });
+
+        fetch('https://api.thecatapi.com/v1/images/search?limit=1')
+          .then((response) => response.json())
+          .then((data) => {
+            catImageElement.src = data[0].url;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    </script>
+  </body>
+</html>
