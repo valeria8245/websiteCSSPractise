@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play doors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 id="level">Level </h1>
+    <h3 id="health">Health </h3>
+
+    <div class="container"></div>
+
+    <script>
+    //const doorUrl = 'https://www.pngall.com/wp-content/uploads/2017/03/Door-PNG-Picture.png';
+    //const openDoors = 'https://picsum.photos/200/300?grayscale';
+
+    let level = 1;
+    let numberDoors = 5; 
+    let health = 12;
+
+    const container = document.querySelector('.container');
+    generateLevel(numberDoors);
+
+    const levelElement = document.getElementById('level');
+    levelElement.textContent += level;
+
+    const healthElement = document.getElementById('health');
+    healthElement.textContent += health;
+
+
+    function generateLevel(numberDoors){
+
+        const randomDoors = Math.floor(Math.random() * 5) + 1;
+        console.log(randomDoors);
+
+        for(let i = 1; i <= numberDoors; i++) {
+            const door = document.createElement('div');
+            door.textContent = 'door' +i;
+            door.classList.add('door');
+            door.addEventListener('click', () => openDoor(door, i, randomDoors));
+            container.appendChild(door);
+        }
+    }
+        const x  = Math.floor(Math.random() * 5) + 1;
+
+        function openDoor(door, doorNumber, randomDoors){
+            if(doorNumber === randomDoors) {
+                door.textContent = '🎉';
+                level++;
+                levelElement.textContent = 'Level '+ level;
+                door.style.fontsyze = '50px';
+                door.style.backgroundColor = "";
+                door.classList.add('doorOpened');
+                //delete privious doors
+                container.innerHTML = '';
+                generateLevel(numberDoors++);
+            } else {
+                door.textContent = "😞";
+                door.style.fontsyze = "50px";
+                door.style.backgroundColor = "";
+
+                health--;
+                healthElement.textContent = 'Health: ' + health;
+                if(health === 0) {
+                    alert('Game Over');
+                    window.location.href = 'index.html';
+                }
+            }
+        }
+        
+    </script>
+
+</body>

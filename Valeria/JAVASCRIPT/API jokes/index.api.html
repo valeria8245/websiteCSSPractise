@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API jokes</title>
+    <link rel="stylesheet" href="style.api.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Jokes API</h1>
+        <h3 id="jokes"></h3>
+        <img id="picture" src="" alt="cat picture">
+        <button onclick="getJoke()">New joke</button>
+    </div>
+
+    <script>
+        const jokeElement = document.getElementById('jokes');
+        const pictureElement = document.getElementById('picture');
+        const imageData = data;
+
+        function getJoke(){
+            fetch('https://cat-fact.herokuapp.com/facts')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                jokeElement.textContent = data[0].text;
+                
+            })
+            .catch(error => {
+                jokeElement.textContent = 'Something has gone wrong'
+                console.error(error);
+            });
+
+            fetch('https://api.thecatapi.com/v1/images/search')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                pictureElement.src = data[0].url;
+            })
+            .catch((error) => {
+                pictureElement.src = imageData.url;
+                console.log(error); 
+            })
+        }
+
+    </script>
+
+
+</body>
+</html>
