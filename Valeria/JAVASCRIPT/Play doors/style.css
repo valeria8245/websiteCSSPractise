@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(251, 251, 251);
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    margin-top: 200px;
+    flex-wrap: wrap;
+}
+
+h1{
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+#health{
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+.door{
+    width: 200px;
+    height: 250px;
+    background-image: url('https://www.pngall.com/wp-content/uploads/2017/03/Door-PNG-Picture.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.doorClosed{
+    width: 200px;
+    height: 250px;
+    background-image: url('https://www.kindpng.com/picc/m/113-1135039_transparent-garden-gate-clipart-flower-gate-png-png.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.doorOpened{
+    width: 200px;
+    height: 250px;
+    background-image: url('https://toppng.com/uploads/preview/rose-garden-115497299245svckwbfqw.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
