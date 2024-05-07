@@ -1,0 +1,31 @@
+body {
+    background-image: url(weather.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+button{
+    background: #8d70ff;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;   
+} 
+button:hover{
+    background: #ccc2f6;
+}
+#maxTemp, #minTemp{
+    font-size: 2em;
+    color: #fff;
+}

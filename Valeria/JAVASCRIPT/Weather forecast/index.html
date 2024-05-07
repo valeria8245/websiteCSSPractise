@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API jokes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <h3 id="maxTemp"></h3>
+        <h3 id="minTemp"></h3>
+        
+        <button onclick="getTemp()">Get temperature</button>
+    </div>
+
+    <script>
+        const maxTempElement = document.getElementById('maxTemp');
+        const minTempElement = document.getElementById('minTemp');
+        const pictureElement = document.getElementById('picture');
+
+        function getTemp(){
+            fetch('https://dataservice.accuweather.com/forecasts/v1/daily/1day/324505?apikey=wIacBNEgyAX1wH5pQgicrvFULgYRB0EF&language=en&details=false&metric=true')
+            .then(response => {
+                if(!response.ok){
+                    throw new Error('Error');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                let maxTemp = data.DailyForecasts[0].Temperature.Maximum.Value;
+                maxTempElement.textContent = "Сьогодні максимальна температура: " + maxTemp + "ºC";
+
+                let minTemp = data.DailyForecasts[0].Temperature.Minimum.Value;
+                minTempElement.textContent = "А мінімальна температура: " + minTemp + "ºC";
+            })
+           
+            .catch(error => {
+                maxTempElement.textContent = 'Something has gone wrong';
+                console.error(error);
+            });
+        }
+
+    </script>
+
+
+</body>
+</html>
