@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API recipe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Recype with milk</h1>
+        <h3 id="label"></h3>
+        <h3 id="ingredients"></h3>
+        <h3 id="calories"></h3>
+        
+        <button onclick="getRecipe()">Get recipe</button>
+    </div>
+
+    <script>
+        const labelElement = document.getElementById('label');
+        const imageElement = document.getElementById('image');
+        const ingredientsElement = document.getElementById('ingredients'); 
+        const caloriesElement = document.getElementById('calories'); 
+
+        let urlRecipe = "https://api.edamam.com/search?q=tomato&app_id=4f0c6d79&app_key=17d64da9f7069a3a9b244562612232f3";
+
+        function getRecipe(){
+            fetch(urlRecipe)
+            .then(response => {
+                if(!response.ok){
+                    throw new Error('Error');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+
+                labelElement.textContent = data.hits[0].recipe.label;
+
+            })
+           
+            .catch(error => {
+                labelElement.textContent = 'Something has gone wrong';
+                console.error(error);
+            });
+        }
+
+    </script>
+
+
+</body>
+</html>

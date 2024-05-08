@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.structure {
+  background-color: lightblue;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.profile-pic {
+  border-radius: 50%;
+  width: 150px;
+}
+.section {
+  display: inline-block;
+  width: 300px;
+  margin: 20px 0;
+}
+
+.container-navbar {
+  display: flex;
+  justify-content: space-around;
+}
+.navbar {
+  list-style-type: none;
+  text-align: right;
+}
+.navbar li {
+  display: inline;
+  margin: 0 15px;
+}
+.navbar-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+.navbar-link:hover {
+  color: #00648f;
+  text-decoration: underline;
+}
+
+.navbar-logo{
+  width: 180px;
+  height: 26.9px;
+  text-align: left;
+}
+.navbar-logo:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery > img{
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.button-sign{
+  background-color: #00648f;
+  color: white;
+  border: 1px solid #d96466;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid black;
+  background-color: rgb(106, 255, 123);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+label{
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+input[type="text"], input[type="email"]{
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+
+  <div class="container-navbar">
+    <a href="https://www.spotify.com/ua-uk/premium/"><img src="https://www.dominospizza.pl/getmedia/469c9e78-6dc5-43d3-87af-c033398574b1/RGB_Blue_Type_International_Horz_Dominos_Pizza.svg" class="navbar-logo" alt="logo"></a>
+    <ul class="navbar">
+      <li><a class="navbar-link" href="secondpage.html">Restaurants</a></li>
+      <li><a class="navbar-link" href="#">Track order</a></li>
+      <li><a class="navbar-link" href="#">Contact</a></li>
+    </ul>
+    
+  </div>
+
+
+<div class="structure">
+  <img class="profile-pic" src="https://png.pngtree.com/png-vector/20201028/ourmid/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="Profile Picture">
+  <h1>John Doe</h1>
+  <p>Web Developer At Careerfoundry</p>
+  <p>somehting</p>
+  <hr>
+  <div class="container">
+      <div class="section">
+          <h2>I am</h2>
+          <p>An engineer</p>
+          <p>A reader</p>
+          <p>A hobby cook</p>
+        </div>
+        
+        <div class="section">
+          <h2>I like to</h2>
+          <p>Meet new people</p>
+          <p>Play guitar</p>
+          <p>Eat Icecream</p>
+        </div>
+  </div>
+  <hr>
+</div>
+
+<div class="gallery">
+  <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80" alt="nature">
+  <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80" alt="nature">
+  <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80" alt="nature">
+</div>
+
+
+<hr>
+<br>
+<!-- <form action="example">
+  <input type="date">
+  <input type="button">
+  <input type="email">
+  <input type="file">
+  <input type="submit">
+  <input type="reset">
+  <input type="radio">
+  <input type="password">
+  <input type="checkbox">
+  <input type="color">
+</form> -->
+
+
+<br>
+</body>
+</html>
